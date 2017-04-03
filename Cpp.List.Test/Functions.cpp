@@ -5,27 +5,32 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace CppListTest
 {
-	using namespace opti;
+	using namespace opti::DS;
 	TEST_CLASS(ListMutators)
 	{
 	public:
 
-		TEST_METHOD(List_Push)
+		TEST_METHOD(PushFront)
+		{
+			List<int> _l;
+			bool success = _l.PushFront(1);
+
+			Assert::AreEqual(1, _l.Front(), L"PushFront() was not successful");
+		}
+
+		// modifiers
+		TEST_METHOD(PushBack)
 		{
 			List<int> l;
 			l.PushBack(1);
-			l.PushBack(2);
-			l.PushBack(3);
 			int test = l.Size();
-			Assert::AreEqual(3, test);
-			
-			for (int i = 1; i < 4; ++i)
-			{
-				Assert::AreEqual(i, l.Front());
-				l.PopFront();
-			}
+			Assert::AreEqual(1, test);
+			Assert::AreEqual(1, l.Front());
+
 			
 		}
+
+		// accessors
 
 	};
 }

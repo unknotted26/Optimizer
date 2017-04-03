@@ -2,11 +2,12 @@
 #include "CppUnitTest.h"
 #include "..\Optimizer.Cpp.List\Optimizer_Cpp_List.h"
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+using namespace opti::DS;
 
 namespace CppListTest
 {
 	typedef int elementType;
-	typedef opti::List<elementType> container;
+	typedef List<elementType> container;
 	using namespace opti;
 	TEST_CLASS(ListConstructors)
 	{

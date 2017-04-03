@@ -41,17 +41,23 @@ namespace Optimizer.WPF
             opti.DS.CLI.testClass.InitializeLibrary(fileOpenDialog.InitialDirectory + fileOpenDialog.FileName);
             using (var wrapper = new  opti.DS.CLI.ListInt())//opti.DS.CLI.testClass())
             {
-                
+                wrapper.PushFront(1);
+                wrapper.PushFront(2);
+                wrapper.PushBack(3);
+
+                MessageBox.Show($"ListInt - { wrapper.About() } - { wrapper.Front() } - { wrapper.Back() }");
                 //wrapper._list.InitTestValues();
                 //MessageBox.Show($"{wrapper.GetType()} - {wrapper._list.About()} - {wrapper._list.Front()}");
             }
-
+            
             using (var wrapper = new opti.DS.CLI.TemplateWrapper<int>())
             {
-                opti.DS.CLI.TemplateWrapper<int> t = new opti.DS.CLI.TemplateWrapper<int>(); 
-                MessageBox.Show($"{t.IsInt()}");
+                //wrapper.InitTestValues();
+                //opti.DS.CLI.TemplateWrapper<int> t = new opti.DS.CLI.TemplateWrapper<int>(); 
+                //MessageBox.Show($"{wrapper.Front()}");
             }
 
+           
         }
     }
 }
